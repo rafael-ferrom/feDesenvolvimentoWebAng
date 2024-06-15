@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#form {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background: #fff;
+  border-radius: 10px;
+  padding: 60px;
+  width: min-content;
+  align-items: center;
+}
+
+.input {
+   min-width: 280px;
+  border-radius: 22px;
+  border: 2px solid #6f7e8a;
+  padding: 5px;
+  margin: 0px 0px 12px -5px;
+}
+
+.input input {
+  width: 80%;
+  border: none;
+  outline: none;
+  margin-left: 4px;
+  width: 97%;
+}
+
+.btn {
+  margin-top: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+.btn button {
+  width: 100%;
+  height: 40px;
+  border: none;
+  font-size: 1.2em;
+  border-radius: 20px;
+  outline: none;
+}
+
+.btn-cadastrar {
+  background: #ff4081;
+  color: white;
+}
+
+.btn-cadastrar:disabled {
+  background-color: #8080809e;
+}

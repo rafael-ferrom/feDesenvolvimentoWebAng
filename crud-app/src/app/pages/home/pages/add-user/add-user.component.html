@@ -1,0 +1,62 @@
+<div id="form">
+  <h2 style="margin-bottom: 10%;">Cadastrar</h2>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="w-100">
+      <div class="col-12 col-md-5">
+        <label for="name">Nome</label>
+        <div class="input">
+          <input id="name" formControlName="name" maxlength="50" type="text">
+        </div>
+      </div>
+      <div *ngIf="formGroup.get('name')?.invalid && (formGroup.get('name')?.dirty || formGroup.get('name')?.touched)">
+        <div class="text-danger">Nome é obrigatório</div>
+      </div>
+
+      <div class="col-12 col-md-5 mt-3 mt-md-0">
+        <label for="email">Email</label>
+        <div class="input">
+          <input id="email" formControlName="email" maxlength="40" type="text">
+        </div>
+      </div>
+      <div *ngIf="formGroup.get('email')?.invalid && (formGroup.get('email')?.dirty || formGroup.get('email')?.touched)">
+        <div class="text-danger">Email é obrigatório</div>
+      </div>
+
+      <div class="col-12 col-md-5 mt-3 mt-md-2">
+        <label for="funcao">Função</label>
+        <div >
+          <select class="input" formControlName="funcao">
+            <option value="Engenheiro de FE">Engenheiro de FE</option>
+            <option value="Engenheiro de BE">Engenheiro de BE</option>
+            <option value="Analista de dados">Analista de dados</option>
+            <option value="Líder Técnico">Líder Técnico</option>
+          </select>
+        </div>
+      </div>
+      <div *ngIf="formGroup.get('funcao')?.invalid && (formGroup.get('funcao')?.dirty || formGroup.get('funcao')?.touched)">
+        <div class="text-danger">Selecione uma opção</div>
+      </div>
+
+      <div class="col-12 col-md-5 mt-3 mt-md-2">
+        <label for="password">Senha</label>
+        <div class="input">
+          <input id="password" formControlName="password" type="password" maxlength="15">
+        </div>
+      </div>
+      <div *ngIf="formGroup.get('password')?.invalid && (formGroup.get('password')?.dirty || formGroup.get('password')?.touched)">
+        <div class="text-danger">Senha é obrigatória</div>
+        <div class="text-danger">Deve ter no mínimo 6 caractere</div>
+      </div>
+    </div>
+
+    <div class="btn">
+      <div style="margin-bottom: 10%;">
+        <button type="submit" class="btn-cadastrar" [disabled]="!formGroup.valid">Cadastrar</button>
+      </div>
+
+      <div>
+        <button class="btn-voltar" routerLink="/app/" type="button">Voltar</button>
+      </div>
+    </div>
+  </form>
+</div>

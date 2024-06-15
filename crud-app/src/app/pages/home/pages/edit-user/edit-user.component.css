@@ -1,0 +1,50 @@
+.form-container {
+  position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background: #fff;
+    border-radius: 10px;
+    padding: 60px;
+    width: min-content;
+}
+
+.input {
+  min-width: 280px;
+  border-radius: 22px;
+  border: 2px solid #6f7e8a;
+  padding: 5px;
+  margin-bottom: 12px;
+}
+
+.input input,
+select {
+  width: calc(100% - 10px);
+  border: none;
+  outline: none;
+  margin-left: 5px;
+}
+
+.btn-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn-container button {
+  width: 100%;
+  height: 40px;
+  border: none;
+  font-size: 1.2em;
+  border-radius: 20px;
+  outline: none;
+}
+
+.btn-atualizar {
+  background: #ca25c2;
+  color: white;
+}
+
+.btn-voltar {
+  background-color:#39a7ff; 
+  color: white;
+}

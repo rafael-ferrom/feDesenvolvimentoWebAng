@@ -1,0 +1,51 @@
+<div class="form-container">
+  <form [formGroup]="formGroup" (ngSubmit)="saveUser()">
+    <label for="name">Nome:</label>
+    <div class="input">
+      <input id="name" type="text" formControlName="name" required [(ngModel)]="user.name">
+    </div>
+    <div *ngIf="formGroup.get('name')?.invalid && (formGroup.get('name')?.dirty || formGroup.get('name')?.touched)">
+      <div class="text-danger">Nome é obrigatório</div>
+    </div>
+
+    <label for="email">E-mail:</label>
+    <div class="input">
+      <input id="email" type="email" formControlName="email" required [(ngModel)]="user.email">
+    </div>
+    <div *ngIf="formGroup.get('email')?.invalid && (formGroup.get('email')?.dirty || formGroup.get('email')?.touched)">
+      <div class="text-danger">Email é obrigatório</div>
+    </div>
+
+    <label for="funcao">Função:</label>
+    <div class="input">
+      <select id="funcao" formControlName="funcao" required [(ngModel)]="user.role">
+        <option value="Engenheiro de FE">Engenheiro de FE</option>
+        <option value="Engenheiro de BE">Engenheiro de BE</option>
+        <option value="Analista de dados">Analista de dados</option>
+        <option value="Líder Técnico">Líder Técnico</option>
+      </select>
+    </div>
+    <div *ngIf="formGroup.get('funcao')?.invalid && (formGroup.get('funcao')?.dirty || formGroup.get('funcao')?.touched)">
+      <div class="text-danger">Selecione uma opção</div>
+    </div>
+
+    <div class="col-12 col-md-5 mt-3 mt-md-2">
+      <label for="password">Senha</label>
+      <div class="input">
+        <input id="password" formControlName="password" type="password" maxlength="15" [(ngModel)]="user.password">
+      </div>
+    </div>
+    <div *ngIf="formGroup.get('password')?.invalid && (formGroup.get('password')?.dirty || formGroup.get('password')?.touched)">
+      <div class="text-danger">Senha é obrigatória</div>
+      <div class="text-danger">Deve ter no mínimo 6 caractere</div>
+    </div>
+
+    <div class="btn-container">
+      <button class="btn-atualizar" type="submit">Salvar</button>
+    </div>
+
+    <div class="btn-container">
+      <button class="btn-voltar" routerLink="/app/users" type="button">Voltar</button>
+    </div>
+  </form>
+</div>
